@@ -79,7 +79,7 @@ class TeamsMeetingService
                 // For now, let's assume the user configures it or we must add it.
             }
             
-            $endTime = \Carbon\Carbon::parse($startTime)->addMinutes($duration)->format('Y-m-d\TH:i:s\Z');
+            $endTime = \Carbon\Carbon::parse($startTime)->addMinutes((int) $duration)->format('Y-m-d\TH:i:s\Z');
             $startFormatted = \Carbon\Carbon::parse($startTime)->format('Y-m-d\TH:i:s\Z');
 
             $endpoint = $userId ? "https://graph.microsoft.com/v1.0/users/{$userId}/onlineMeetings" 
